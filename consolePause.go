@@ -11,9 +11,13 @@ import (
 	"os"
 )
 
-func ConsolePause() {
+func ConsolePauseWithoutMessage() {
 	scanner := bufio.NewScanner(os.Stdin)
-	print("\nНажмите на любую клавишу...\n")
 	scanner.Scan()
-	//fmt.Scanf(" ")
+}
+
+func ConsolePauseWithMessage(message string) {
+	scanner := bufio.NewScanner(os.Stdin)
+	print("\n", message)
+	scanner.Scan()
 }
